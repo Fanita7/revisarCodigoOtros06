@@ -1,0 +1,40 @@
+package codigoOtro06;
+
+import java.util.Scanner;
+
+public class codigoOtro06 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//El usuario elige un numero 5 o 7 y después genera números aleatorios de esos determina cuáles son los multiplos de el número elegido.
+		 int[] n = new int[20]; //se agrega new
+
+	        // genera números aleatorios ( 20 - 400)
+	        for (int i = 0; i < 20; i++) { //se pone ++, porque se debe ir sumando
+	            n[i] = (int) (Math.random() * 381) + 20;
+	            System.out.print(n[i] + " ");
+	        }
+
+	        System.out.println("\n¿Qué números quiere resaltar?"); //es println
+	        System.out.print("(1 – los múltiplos de 5, 2 – los múltiplos de 7): ");
+
+	        Scanner scanner = new Scanner(System.in);
+	        int opcion = scanner.nextInt();
+
+	        // determinar el múltiplo
+	        int multiplo = (opcion == 1) ? 5 : 7; //se intercambian : y ?
+
+	        // recorrer array y resaltar números
+	        for (int e : n) { //int de entero
+	            if (e % multiplo == 0) {
+	                System.out.print("[" + e + "] ");
+	            } else {
+	                System.out.print(e + " ");
+	            }
+	        }
+	        scanner.close(); // se cierra scanner
+		
+	
+	}
+
+}
